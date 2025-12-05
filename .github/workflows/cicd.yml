@@ -45,6 +45,9 @@ jobs:
         name: GreetingsEarth.zip
         path: GreetingsEarth.zip
 
+    - name: Publish to Azure App Service
+      run: az webapp deploy --resource-group GreetingsEarth --name GreetingsEarth --src-path GreetingsEarth.zip --type zip
+      
   env:
     runs-on: ubuntu-latest
     steps:
@@ -60,6 +63,3 @@ jobs:
 
     - name: Apply Bicep template
       run: az deployment group create --resource-group GreetingsEarth --template-file ./templates/prod.bicep
-
-    - name: Publish to Azure App Service
-      run: az webapp deploy --resource-group GreetingsEarth --name GreetingsEarth --src-path GreetingsEarth.zip --type zip
