@@ -45,4 +45,4 @@ jobs:
         path: GreetingsEarth.zip
 
     - name: Apply Bicep template
-      run: az deployment group create --resource-group GreetingsEarth --template-file ./prod.bicep
+      run: az deployment group create --resource-group GreetingsEarth --template-file ./templates/prod.bicep
